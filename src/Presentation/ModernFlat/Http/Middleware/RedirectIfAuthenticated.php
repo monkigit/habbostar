@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Middleware;
+namespace HabboStar\Presentation\ModernFlat\Http\Middleware;
 
-use App\Providers\RouteServiceProvider;
 use Closure;
+use HabboStar\Presentation\ModernFlat\Providers\RouteServiceProvider;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 

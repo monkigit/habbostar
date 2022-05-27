@@ -189,11 +189,11 @@ return [
         /*
          * Application Service Providers...
          */
-        App\Providers\AppServiceProvider::class,
-        App\Providers\AuthServiceProvider::class,
+        \HabboStar\Presentation\ModernFlat\Providers\AppServiceProvider::class,
+        \HabboStar\Presentation\ModernFlat\Providers\AuthServiceProvider::class,
         // App\Providers\BroadcastServiceProvider::class,
-        App\Providers\EventServiceProvider::class,
-        App\Providers\RouteServiceProvider::class,
+        \HabboStar\Presentation\ModernFlat\Providers\EventServiceProvider::class,
+        \HabboStar\Presentation\ModernFlat\Providers\RouteServiceProvider::class,
 
     ],
 
