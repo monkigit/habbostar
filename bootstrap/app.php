@@ -17,10 +17,6 @@ $app = new Illuminate\Foundation\Application(
 
 $app->useAppPath("src");
 
-$applicationProviders = call_user_func($app->make("$themeNamespace\Config\ServiceProviderRegistry"));
-$providers = array_merge(config('app.providers'), $applicationProviders);
-
-config(['app.providers' => $providers]);
 
 /*
  * Bootstrap the environment and configuration before the kernel loads.
@@ -71,7 +67,9 @@ $app->singleton(
 /*
  * Register application service providers.
  */
-
-
+$app->singleton(
+    abstract: \HabboStar\Presentation\SharedResources\Config\ServiceProviderRegistryInterface::class,
+    concrete: $themeNamespace . "\Config\ServiceProviderRegistry"
+);
 
 return $app;

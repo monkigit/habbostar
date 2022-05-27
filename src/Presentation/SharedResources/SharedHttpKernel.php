@@ -16,6 +16,7 @@ class SharedHttpKernel extends Kernel
         HandleExceptions::class,
         RegisterFacades::class,
         RegisterProviders::class,
+        RegisterApplicationProviders::class,
         BootProviders::class,
     ];
 }

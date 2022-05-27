@@ -189,7 +189,6 @@ return [
         /*
          * Application Service Providers...
          */
-
     ],
 
     /*
