@@ -7,6 +7,6 @@ namespace HabboStar\Presentation\ModernFlat;
 use HabboStar\Presentation\ModernFlat\Http\Controllers\IndexController;
 use Illuminate\Support\Facades\Route;
 
-return function (): void {
+return function(): void {
     Route::get('/', IndexController::class);
 };
