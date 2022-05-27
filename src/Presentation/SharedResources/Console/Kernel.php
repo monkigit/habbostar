@@ -1,6 +1,6 @@
 <?php
 
-namespace HabboStar\Presentation\ModernFlat\Console;
+namespace HabboStar\Presentation\SharedResources\Console;
 
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;

@@ -33,7 +33,7 @@ $app->singleton(
 
 $app->singleton(
     Illuminate\Contracts\Console\Kernel::class,
-    \HabboStar\Presentation\ModernFlat\Console\Kernel::class
+    \HabboStar\Presentation\SharedResources\Console\Kernel::class
 );
 
 $app->singleton(

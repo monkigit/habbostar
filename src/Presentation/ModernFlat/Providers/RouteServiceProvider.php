@@ -8,6 +8,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\RateLimiter;
 use Illuminate\Support\Facades\Route;
 
+use function HabboStar\Presentation\ModernFlat\routes;
+
 class RouteServiceProvider extends ServiceProvider
 {
     /**
@@ -29,12 +31,8 @@ class RouteServiceProvider extends ServiceProvider
         $this->configureRateLimiting();
 
         $this->routes(function () {
-            Route::middleware('api')
-                ->prefix('api')
-                ->group(base_path('routes/api.php'));
-
             Route::middleware('web')
-                ->group(base_path('routes/web.php'));
+                ->group(require __DIR__ . '/../routes.php');
         });
     }
 
