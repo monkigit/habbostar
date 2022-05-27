@@ -8,6 +8,6 @@ final class LoginController
 {
     public function __invoke()
     {
-
+        return "API";
     }
 }

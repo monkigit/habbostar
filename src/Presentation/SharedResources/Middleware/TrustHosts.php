@@ -1,6 +1,6 @@
 <?php
 
-namespace HabboStar\Presentation\ModernFlat\Http\Middleware;
+namespace HabboStar\Presentation\SharedResources\Middleware;
 
 use Illuminate\Http\Middleware\TrustHosts as Middleware;
 

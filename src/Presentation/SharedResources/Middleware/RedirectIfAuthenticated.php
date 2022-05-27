@@ -1,6 +1,6 @@
 <?php
 
-namespace HabboStar\Presentation\ModernFlat\Http\Middleware;
+namespace HabboStar\Presentation\SharedResources\Middleware;
 
 use Closure;
 use HabboStar\Presentation\ModernFlat\Providers\RouteServiceProvider;

@@ -1,6 +1,6 @@
 <?php
 
-namespace HabboStar\Presentation\ModernFlat\Http;
+namespace HabboStar\Presentation\Api\Http;
 
 use HabboStar\Presentation\SharedResources\SharedHttpKernel;
 
@@ -21,22 +21,6 @@ class Kernel extends SharedHttpKernel
         \Illuminate\Foundation\Http\Middleware\ValidatePostSize::class,
         \HabboStar\Presentation\SharedResources\Middleware\TrimStrings::class,
         \Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull::class,
-    ];
-
-    /**
-     * The application's route middleware groups.
-     *
-     * @var array<string, array<int, class-string|string>>
-     */
-    protected $middlewareGroups = [
-        'web' => [
-            \HabboStar\Presentation\SharedResources\Middleware\EncryptCookies::class,
-            \Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse::class,
-            \Illuminate\Session\Middleware\StartSession::class,
-            \Illuminate\View\Middleware\ShareErrorsFromSession::class,
-            \HabboStar\Presentation\SharedResources\Middleware\VerifyCsrfToken::class,
-            \Illuminate\Routing\Middleware\SubstituteBindings::class,
-        ],
     ];
 
     /**

@@ -60,8 +60,8 @@ return [
     */
 
     'middleware' => [
-        'verify_csrf_token' => \HabboStar\Presentation\ModernFlat\Http\Middleware\VerifyCsrfToken::class,
-        'encrypt_cookies' => \HabboStar\Presentation\ModernFlat\Http\Middleware\EncryptCookies::class,
+        'verify_csrf_token' => \HabboStar\Presentation\SharedResources\Middleware\VerifyCsrfToken::class,
+        'encrypt_cookies' => \HabboStar\Presentation\SharedResources\Middleware\EncryptCookies::class,
     ],
 
 ];

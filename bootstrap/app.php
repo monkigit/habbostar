@@ -15,6 +15,13 @@ $app = new Illuminate\Foundation\Application(
     $_ENV['APP_BASE_PATH'] ?? dirname(__DIR__)
 );
 
+$app->useAppPath("src");
+
+$applicationProviders = call_user_func($app->make("$themeNamespace\Config\ServiceProviderRegistry"));
+$providers = array_merge(config('app.providers'), $applicationProviders);
+
+config(['app.providers' => $providers]);
+
 /*
  * Bootstrap the environment and configuration before the kernel loads.
  */
@@ -26,7 +33,6 @@ $bootstrapBeforeKernel = [
 foreach ($bootstrapBeforeKernel as $bootstrapper) {
     $app->make($bootstrapper)->bootstrap($app);
 }
-
 
 /*
 |--------------------------------------------------------------------------
@@ -44,15 +50,28 @@ $app->singleton(
     \HabboStar\Presentation\SharedResources\Console\Kernel::class
 );
 
+// Get the theme namespace
+$theme = env('THEME');
+if ($theme === null) {
+    throw new RuntimeException("Theme is not defined");
+}
+
+$themeNamespace = sprintf("HabboStar\Presentation\%s", $theme);
+
 $app->singleton(
     Illuminate\Contracts\Http\Kernel::class,
-    \HabboStar\Presentation\SharedResources\SharedHttpKernel::class,
+    $themeNamespace . "\Http\Kernel",
 );
 
 $app->singleton(
     Illuminate\Contracts\Debug\ExceptionHandler::class,
-    \HabboStar\Presentation\ModernFlat\Exceptions\Handler::class,
+    $themeNamespace . "\Exceptions\Handler",
 );
+
+/*
+ * Register application service providers.
+ */
+
 
 
 return $app;
