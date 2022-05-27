@@ -1,5 +1,8 @@
 # HabboStar
-HabboStar is a Content Management System for Habbo Hotel.
+HabboStar is an open source Habbo content management system.
 
-TODOy
+Features include:
+- Extensibility
+- Multi-theme
+- ... TODO
 

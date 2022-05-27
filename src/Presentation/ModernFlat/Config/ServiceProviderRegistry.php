@@ -8,11 +8,6 @@ use HabboStar\Presentation\SharedResources\Config\ServiceProviderRegistryInterfa
 
 final class ServiceProviderRegistry implements ServiceProviderRegistryInterface
 {
-    /**
-     * Return all application service providers.
-     *
-     * @return string[]
-     */
     public function __invoke(): array
     {
         return [
