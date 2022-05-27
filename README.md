@@ -1,4 +1,4 @@
-# Habbo ⭐
+# Habbo⭐
 
 HabboStar is an open source Habbo CMS with extensibility in mind. A few distinctive features are:
 - Extensibility. Features are very easily added.
