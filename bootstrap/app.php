@@ -16,6 +16,19 @@ $app = new Illuminate\Foundation\Application(
 );
 
 /*
+ * Bootstrap the environment and configuration before the kernel loads.
+ */
+$bootstrapBeforeKernel = [
+    \Illuminate\Foundation\Bootstrap\LoadEnvironmentVariables::class,
+    \Illuminate\Foundation\Bootstrap\LoadConfiguration::class
+];
+
+foreach ($bootstrapBeforeKernel as $bootstrapper) {
+    $app->make($bootstrapper)->bootstrap($app);
+}
+
+
+/*
 |--------------------------------------------------------------------------
 | Bind Important Interfaces
 |--------------------------------------------------------------------------
@@ -27,29 +40,19 @@ $app = new Illuminate\Foundation\Application(
 */
 
 $app->singleton(
-    Illuminate\Contracts\Http\Kernel::class,
-    \HabboStar\Presentation\ModernFlat\Http\Kernel::class
-);
-
-$app->singleton(
     Illuminate\Contracts\Console\Kernel::class,
     \HabboStar\Presentation\SharedResources\Console\Kernel::class
 );
 
 $app->singleton(
-    Illuminate\Contracts\Debug\ExceptionHandler::class,
-    \HabboStar\Presentation\ModernFlat\Exceptions\Handler::class
+    Illuminate\Contracts\Http\Kernel::class,
+    \HabboStar\Presentation\SharedResources\SharedHttpKernel::class,
 );
 
-/*
-|--------------------------------------------------------------------------
-| Return The Application
-|--------------------------------------------------------------------------
-|
-| This script returns the application instance. The instance is given to
-| the calling script so we can separate the building of the instances
-| from the actual running of the application and sending responses.
-|
-*/
+$app->singleton(
+    Illuminate\Contracts\Debug\ExceptionHandler::class,
+    \HabboStar\Presentation\ModernFlat\Exceptions\Handler::class,
+);
+
 
 return $app;

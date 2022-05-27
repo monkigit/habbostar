@@ -8,6 +8,6 @@ final class IndexController
 {
     public function __invoke()
     {
-        return "hi!";
+        return env('THEME');
     }
 }

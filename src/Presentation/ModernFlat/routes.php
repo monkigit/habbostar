@@ -13,5 +13,3 @@ return function (): void {
 
     $router->get('/', IndexController::class);
 };
-
-
