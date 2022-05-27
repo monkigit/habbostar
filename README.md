@@ -1,8 +1,10 @@
 # HabboStar
-HabboStar is an open source Habbo content management system.
+HabboStar is an open source Habbo content management system with extensibility in mind.
 
-Features include:
-- Extensibility
-- Multi-theme
-- ... TODO
+HabboStar is:
+- Multi-themed
+- Extensible
+- Fast
+- Easily configurable
 
+... TODO
